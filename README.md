@@ -1,9 +1,6 @@
-Apyche Stats
-============
+# Apyche Stats
 
 A simple api to gather stats about the visitors to your apache served site from a separate Django project
-
-### Simple API for the Apache access_log
 
 ## Basic Set-up
 - mkvirtualenv --no-site-packages apyche-env
@@ -13,6 +10,16 @@ A simple api to gather stats about the visitors to your apache served site from 
 - cd apyche_stats/
 - python manage.py runserver 0.0.0.0:8000
 - http://0.0.0.0:8000/api/stats
+
+## Default Params
+The default /api/stats endpoint will return in order of newest to oldest the last occurence of an IP in the log.
+
+The follow options are available out of the box - default values are bracketed:
+
+```
+all : (true|[false]) when true will return all lines in the log
+ip_list : (true|[false]) when true returns only an array of ips - useful for bulk lookups
+```
 
 ### Questions?
 
