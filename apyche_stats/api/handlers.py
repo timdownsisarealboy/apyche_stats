@@ -11,7 +11,6 @@ class StatHandler( BaseHandler ):
 	ips_seen = {}
 	for line in lines:
 		data = line.split(" ")
-		print data
 		ip = data[0]
 		if ip not in ips_seen:
 			ips_seen[data[0]] = True

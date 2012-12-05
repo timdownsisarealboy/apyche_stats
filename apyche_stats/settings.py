@@ -1,4 +1,4 @@
-# Django settings for web_stats project.
+# Django settings for apyche project.
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
@@ -100,7 +100,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.messages.middleware.MessageMiddleware',
 )
 
-ROOT_URLCONF = 'web_stats.urls'
+ROOT_URLCONF = 'apyche_stats.urls'
 
 TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
