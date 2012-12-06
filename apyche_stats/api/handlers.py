@@ -41,7 +41,7 @@ class StatHandler( BaseHandler ):
 					ips.append((data[0],line_data))
 					ips_seen[data[0]] = True
 			else:
-				ips.append((data[0],data))
+				ips.append((data[0],line_data))
 				ips_seen[data[0]] = True
 	
 	if params.get("ip_list","false") == "true":
