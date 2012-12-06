@@ -10,6 +10,7 @@ A simple api to gather stats about the visitors to your apache served site from 
 - cd apyche_stats/
 - python manage.py runserver 0.0.0.0:8000
 - http://0.0.0.0:8000/api/stats
+- Basic sortable front-end http://${host_name}:8000/media/stats.html
 
 ## Default Params
 The default /api/stats endpoint will return in order of newest to oldest the last occurence of an IP in the log.
