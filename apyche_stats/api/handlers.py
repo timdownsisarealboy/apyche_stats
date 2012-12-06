@@ -5,7 +5,7 @@ class StatHandler( BaseHandler ):
 	return {
 		'time' : data[3][1:],
 		'zone' : data[4][:-1],
-		'method' : data[5],
+		'method' : data[5][1:],
 		'resource' : data[6],
 		'protocol' : data[7],
 		'status_code' : data[8],
