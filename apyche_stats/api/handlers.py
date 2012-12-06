@@ -32,6 +32,10 @@ class StatHandler( BaseHandler ):
 			ips_seen[data[0]] = True
 			ips.append((data[0],self._get_line_data(data)))
 	
+	if params.get("resource",None) != None:
+		filter_for = params.get("resource")
+		ips = filter(lambda x: x[1]["resource"] == filter_for, ips) 
+	
 	if params.get("ip_list","false") == "true":
 		ip_list = []
 		for ip in ips:

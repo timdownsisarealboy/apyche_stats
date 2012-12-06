@@ -19,6 +19,7 @@ The follow options are available out of the box - default values are bracketed:
 ```
 all : (true|[false]) when true will return all lines in the log
 ip_list : (true|[false]) when true returns only an array of ips - useful for bulk lookups
+resource : (string) filter the results for a specific resource name
 ```
 
 ### Questions?
