@@ -26,15 +26,23 @@ class StatHandler( BaseHandler ):
 		ip = data[0]
 		if params.get("all","false") == "false":
 			if ip not in ips_seen:
-				ips_seen[data[0]] = True
-				ips.append((data[0],self._get_line_data(data)))
+				line_data = self._get_line_data(data)
+				if params.get("resource",None) != None:
+					if line_data["resource"] == params.get("resource"):
+						ips_seen[data[0]] = True
+						ips.append((data[0],line_data))
+				else:
+					ips_seen[data[0]] = True
+					ips.append((data[0],line_data))
 		else:
-			ips_seen[data[0]] = True
-			ips.append((data[0],self._get_line_data(data)))
-	
-	if params.get("resource",None) != None:
-		filter_for = params.get("resource")
-		ips = filter(lambda x: x[1]["resource"] == filter_for, ips) 
+			line_data = self._get_line_data(data)
+			if params.get("resource",None) != None:
+				if line_data["resource"] == params.get("resource"):
+					ips.append((data[0],line_data))
+					ips_seen[data[0]] = True
+			else:
+				ips.append((data[0],data))
+				ips_seen[data[0]] = True
 	
 	if params.get("ip_list","false") == "true":
 		ip_list = []
