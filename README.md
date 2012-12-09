@@ -8,7 +8,7 @@ A simple api to gather stats about the visitors to your apache served site from 
 - cd apyche_stats/
 - pip install -r requirements.pip
 - cd apyche_stats/
-- python manage.py runserver 0.0.0.0:8000
+- gunicorn_django -b 0.0.0.0:8000 --daemon 
 - http://0.0.0.0:8000/api/stats
 - Basic sortable front-end http://${host_name}:8000/media/stats.html
 
