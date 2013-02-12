@@ -13,6 +13,6 @@ setup(
     install_requires=[
         'Django==1.3',
 	'django-piston',
-	'gunicorn'
+	'gunicorn==0.13.4'
     ]
 )
